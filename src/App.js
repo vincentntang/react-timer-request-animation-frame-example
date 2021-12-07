@@ -1,11 +1,14 @@
 import './App.css';
+import React from 'react';
 
-function App() {
+import { Counter } from "./components/Counter"; 
+function App () {
   return (
     <div className="App">
-      Hello world
+      Hello World
+      <Counter/>
     </div>
-  );
+  );  
 }
 
 export default App;
