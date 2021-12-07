@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 
-import { Counter } from "./components/Counter"; 
+import { Counter } from "./requestAnimFrame/RafCounter"; 
 function App () {
   return (
     <div className="App">
@@ -11,4 +11,4 @@ function App () {
   );  
 }
 
-export default App;
+export default App; 

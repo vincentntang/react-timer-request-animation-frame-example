@@ -1,12 +1,10 @@
 import React from "react"
 import {useState, useEffect, useRef} from "react"
 
-export const Counter = () => {
-  const [count , setCount] = useState(0);
+export const useRafCounter = callback => {
 
   // Use useRef for mutating variables we want to persist
   // without  triggering rerender on their change
-
   const requestRef = useRef();
   const previousTimeRef = useRef();
 
@@ -17,7 +15,7 @@ export const Counter = () => {
 
       // Pass a function to the setter of the state
       // so we always have latest state
-      setCount(prevCount => (prevCount + deltaTime * 0.001) % 100)
+      callback(deltaTime);
     }
 
     previousTimeRef.current = time;
@@ -29,10 +27,4 @@ export const Counter = () => {
     requestRef.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(requestRef.current);
   }, []) // run once
-  return (
-    <div className="counter">
-      {Math.round(count)}
-    </div>
-  );
-}
-
+} 
