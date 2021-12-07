@@ -17,7 +17,7 @@ export const Counter = () => {
 
       // Pass a function to the setter of the state
       // so we always have latest state
-      setCount(prevCount => (prevCount + deltaTime * 0.01) % 100)
+      setCount(prevCount => (prevCount + deltaTime * 0.001) % 100)
     }
 
     previousTimeRef.current = time;
